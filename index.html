@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jogo - Ping Pong</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <audio id="somDerrota" src="recursos/fail.mp3"></audio>
+    <audio id="somVitoria" src="recursos/Win.mp3"></audio>
+    <audio id="somColisao" src="recursos/pong.mp3"></audio>
+    <canvas id="pingPongCanvas" width="800" height="400"></canvas>
+    <div id="info">
+        <p>1 - A cada clique com o botão esquerdo do mouse, a velocidade da bola aumenta.</p>
+        <p>2 - A cada clique com o botão direito do mouse, a velocidade da bola diminui.</p>
+        <p>3 - Quando houver um gol, a bola recomeça no centro com a velocidade inicial.</p>
+        <p>4 - A vitória/derrota acontece quando um dos jogadores atinge 5 gols no placar.</p>
+    </div>
+    <footer>
+        Desenvolvido por Fabiano Junior &copy; 2023
+    </footer>
+    <script>
+        function falarTexto(texto) {
+            if ('speechSynthesis' in window) {
+                var synth = window.speechSynthesis;
+                var utterance = new SpeechSynthesisUtterance(texto);
+                synth.speak(utterance);
+            }
+        }
+    </script>
+
+    <script src="js/pingpong.js"></script>
+</body>
+
+</html>
